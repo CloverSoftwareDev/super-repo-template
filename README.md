@@ -1,6 +1,8 @@
-# Super Repo Template
+# <img src="packages/website/assets/logo.png" alt="Superepo Logo" width="50" height="50" style="vertical-align: middle; margin-right: 10px;"> The Superepo
 
-A high-performance TypeScript monorepo template integrated with Antigravity and Gemini.
+The high-performance TypeScript superepo template integrated with **Antigravity** and **Google Gemini**.
+
+> **"Build Faster. Scale Infinitely."**
 
 ## Packages
 
@@ -10,8 +12,16 @@ A high-performance TypeScript monorepo template integrated with Antigravity and 
 | **[@super-repo/api-client](./packages/api-client)** | API Client SDK | Kubb, React Query, Faker Mocks |
 | **[@super-repo/cli](./packages/cli)** | CLI Tool | Commander, Inquirer |
 | **[@super-repo/client](./packages/client)** | Native Client | Expo, React Native Paper |
-| **[@super-repo/web](./packages/web)** | Web App | Next.js, Vanilla CSS, Material Design Tokens |
-| **[@super-repo/website](./packages/website)** | Landing Page | HTMX, Material Web |
+| **[@super-repo/web](./packages/web)** | Web App | Next.js 16, Vanilla CSS |
+| **[@super-repo/website](./packages/website)** | Landing Page | HTMX, LinearX CSS |
+
+## Agentic AI Readiness
+
+This template is **AI-Native**.
+Every package includes a `GEMINI.md` file that acts as long-term memory for Antigravity agents.
+
+- **Antigravity**: Autonomous coding agent.
+- **Gemini CLI**: Seamless context integration.
 
 ## Setup
 
@@ -20,12 +30,32 @@ A high-performance TypeScript monorepo template integrated with Antigravity and 
    npm install
    ```
 
-2. **Environment Variables**:
-   Copy `.env.example` in `packages/api` and set up Supabase credentials.
+2. **Environment Variables** (using CLI):
+   ```bash
+   npm run cli -- setup-env
+   ```
+   This creates `.env` files from `.env.example` templates.
+
+## CLI Tool
+
+The monorepo includes a CLI for common tasks:
+
+```bash
+# Show all commands
+npm run cli -- --help
+
+# Setup environment files
+npm run cli -- setup-env
+
+# Scaffold a component
+npm run cli -- scaffold component web MyButton
+```
+
+See [@super-repo/cli](./packages/cli) for full documentation.
 
 ## Workflows
 
+- **Develop All**: `npm run dev` (Runs API, Web, and Website in parallel)
 - **Develop API**: `cd packages/api && npm run dev`
 - **Develop Web**: `cd packages/web && npm run dev`
 - **Develop Client**: `cd packages/client && npm start`
-- **Generate API Client**: `cd packages/api-client && npm run generate`

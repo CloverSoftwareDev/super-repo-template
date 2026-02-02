@@ -1,1 +1,8 @@
 /node_modules
+/packages/api/node_modules
+/packages/api-client/node_modules
+/packages/cli/node_modules
+/packages/client/node_modules
+/packages/web/node_modules
+/packages/website/node_modules
+

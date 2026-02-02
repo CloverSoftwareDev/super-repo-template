@@ -4,6 +4,8 @@ import swaggerUi from '@fastify/swagger-ui'
 import { jsonSchemaTransform } from 'fastify-type-provider-zod'
 
 export default fp(async (fastify) => {
+  const apiUrl = process.env.API_URL || 'http://localhost:3000'
+
   await fastify.register(swagger, {
     openapi: {
       info: {
@@ -13,15 +15,20 @@ export default fp(async (fastify) => {
       },
       servers: [
         {
-          url: 'http://localhost:3000',
-          description: 'Local server',
+          url: apiUrl,
+          description: process.env.API_URL ? 'Production server' : 'Local server',
         },
+      ],
+      tags: [
+        { name: 'Auth', description: 'Authentication endpoints' },
+        { name: 'Users', description: 'User management endpoints' },
+        { name: 'Addresses', description: 'Address management endpoints' },
       ],
     },
     transform: jsonSchemaTransform,
   })
 
   await fastify.register(swaggerUi, {
-    routePrefix: '/docs',
+    routePrefix: '/api',
   })
 })

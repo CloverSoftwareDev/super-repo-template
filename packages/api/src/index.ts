@@ -1,7 +1,14 @@
 import Fastify from 'fastify'
-import { validatorCompiler, serializerCompiler, ZodTypeProvider } from 'fastify-type-provider-zod'
+import { validatorCompiler, serializerCompiler, type ZodTypeProvider } from 'fastify-type-provider-zod'
 import swaggerPlugin from './plugins/swagger.js'
+import staticPlugin from './plugins/static.js'
 import { supabase } from './lib/supabase.js'
+import { authRoutes } from './routes/auth.js'
+import { usersRoutes } from './routes/users.js'
+import { addressesRoutes } from './routes/addresses.js'
+import dotenv from 'dotenv'
+
+dotenv.config()
 
 const fastify = Fastify({
   logger: true,
@@ -12,6 +19,12 @@ fastify.setSerializerCompiler(serializerCompiler)
 
 // Register Plugins
 fastify.register(swaggerPlugin)
+fastify.register(staticPlugin)
+
+// Register Routes
+fastify.register(authRoutes)
+fastify.register(usersRoutes)
+fastify.register(addressesRoutes)
 
 // Health Check
 fastify.get('/health', async () => {
@@ -21,9 +34,10 @@ fastify.get('/health', async () => {
 
 const start = async () => {
   try {
-    await fastify.listen({ port: 3000, host: '0.0.0.0' })
-    console.log(`Server listening on http://localhost:3000`)
-    console.log(`Docs available at http://localhost:3000/docs`)
+    const port = Number(process.env.PORT) || 3000
+    await fastify.listen({ port, host: '0.0.0.0' })
+    console.log(`Server listening on http://localhost:${port}`)
+    console.log(`Docs available at http://localhost:${port}/api`)
   } catch (err) {
     fastify.log.error(err)
     process.exit(1)

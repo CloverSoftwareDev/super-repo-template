@@ -19,3 +19,7 @@ This package contains the Expo/React Native application.
 
 ### Platform Specifics
 - Check for platform compatibility when using native modules (Web vs Mobile).
+
+### Component Scaffolding
+- **ALWAYS** use CLI: `npm run cli -- scaffold component client MyComponent`
+- Do NOT manually create component files.

@@ -17,3 +17,7 @@ This package contains the Next.js fullstack application.
 
 ### API
 - Use `@super-repo/api-client` to fetch data from the API.
+
+### Component Scaffolding
+- **ALWAYS** use CLI: `npm run cli -- scaffold component web MyComponent`
+- Do NOT manually create component files.

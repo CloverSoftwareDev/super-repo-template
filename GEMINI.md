@@ -104,3 +104,32 @@ export function MyComponent({ className, children, ...props }: MyComponentProps)
 
 - **Do NOT commit automatically**  only commit when explicitly asked by the user
 - Wait for user approval before running 'git commit'
+
+## CLI Tool
+
+> **MANDATORY: Use the CLI for scaffolding and environment setup.**
+
+### Scaffolding Components
+
+**ALWAYS** use the CLI to scaffold new components:
+
+```bash
+npm run cli -- scaffold component web MyComponent
+npm run cli -- scaffold component client MyComponent
+npm run cli -- scaffold component website MyComponent
+```
+
+Do NOT manually create component files. The CLI ensures:
+- Correct file naming (kebab-case)
+- Proper component structure
+- Consistent interface patterns
+
+### Environment Setup
+
+Use the CLI to set up environment files:
+
+```bash
+npm run cli -- setup-env
+```
+
+This copies `.env.example` to `.env` for all packages that have templates.

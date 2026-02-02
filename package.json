@@ -11,7 +11,9 @@
     "format": "npx @biomejs/biome format --write",
     "lint": "npx @biomejs/biome lint --write",
     "check": "npx @biomejs/biome check --write",
-    "cli": "tsx packages/cli/src/index.ts"
+    "cli": "tsx packages/cli/src/index.ts",
+    "build": "npm run cli -- build",
+    "start": "npm run start -w packages/api"
   },
   "keywords": [
     "monorepo"

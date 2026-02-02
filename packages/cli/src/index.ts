@@ -1,5 +1,6 @@
 #!/usr/bin/env node
 import { Command } from 'commander'
+import { build } from './commands/build'
 import { setupEnv } from './commands/env'
 import { rebuildWebsite } from './commands/rebuild-website'
 import { scaffoldComponent } from './commands/scaffold'
@@ -25,6 +26,14 @@ program
   .description('Copy website files to packages/api/public for static serving')
   .action(async () => {
     await rebuildWebsite()
+  })
+
+// Build command
+program
+  .command('build')
+  .description('Build website and API for production deployment')
+  .action(async () => {
+    await build()
   })
 
 // Scaffold command group

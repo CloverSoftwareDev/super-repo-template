@@ -5,7 +5,7 @@
 /packages/client/node_modules
 /packages/web/node_modules
 /packages/website/node_modules
-
+/packages/api/public
 TODO.md
 /packages/*/.env.local
 

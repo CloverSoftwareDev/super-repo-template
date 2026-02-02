@@ -243,19 +243,19 @@
                                 A High-performance REST API. We use Fastify for its low overhead and Swagger for auto-generated documentation. <strong>Supabase</strong> provides the Postgres database and Auth layer.
                             </p>
 
-                            <span class="content-title" style="margin-top: 24px;">Database Connection</span>
+                            <span class="content-title" style="margin-top: 24px;">Static Website Serving</span>
                             <p>
-                                Connection strings are managed via `packages/api/.env`. Use the `supabase` CLI for migrations.
+                                In production, the API serves the <code>packages/website</code> landing page at the root path (<code>/</code>). This allows a single deployment to handle both API and static content.
                             </p>
-                            
+
                             <span class="content-title" style="margin-top: 24px;">API Documentation</span>
                             <p>
-                                Swagger UI is automatically served at `/documentation`.
+                                Swagger UI is automatically served at <code>/api</code>. Use it to explore all available endpoints interactively.
                             </p>
 
                              <div class="code-block">
                                 <span class="code-cmd">npm</span> run dev -w packages/api<br>
-                                <span class="code-cmd">curl</span> http://localhost:8080/documentation
+                                <span class="code-cmd">open</span> http://localhost:3000/api
                             </div>
                         </div>
                     </details>
@@ -351,9 +351,15 @@
                                 Static landing page built with HTMX. Lightweight and fast for marketing and documentation purposes.
                             </p>
                             
-                            <span class="content-title" style="margin-top: 24px;">Development</span>
+                            <span class="content-title" style="margin-top: 24px;">Production Serving</span>
+                            <p>
+                                In production, this website is served by the <code>packages/api</code> package at the root path (<code>/</code>). The API bundles the website files and serves them via <code>@fastify/static</code>.
+                            </p>
+
+                            <span class="content-title" style="margin-top: 24px;">Local Development</span>
                             <div class="code-block">
-                                <span class="code-cmd">npm</span> run dev -w packages/website
+                                <span class="code-cmd">npm</span> run dev -w packages/website  # Standalone<br>
+                                <span class="code-cmd">npm</span> run dev -w packages/api      # Via API at /
                             </div>
                         </div>
                     </details>

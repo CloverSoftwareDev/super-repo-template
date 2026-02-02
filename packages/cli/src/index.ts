@@ -1,6 +1,7 @@
 #!/usr/bin/env node
 import { Command } from 'commander'
 import { setupEnv } from './commands/env'
+import { rebuildWebsite } from './commands/rebuild-website'
 import { scaffoldComponent } from './commands/scaffold'
 
 const program = new Command()
@@ -16,6 +17,14 @@ program
   .description('Create .env files from .env.example templates')
   .action(async () => {
     await setupEnv()
+  })
+
+// Rebuild website command
+program
+  .command('rebuild-website')
+  .description('Copy website files to packages/api/public for static serving')
+  .action(async () => {
+    await rebuildWebsite()
   })
 
 // Scaffold command group
@@ -40,3 +49,4 @@ scaffold
   })
 
 program.parse(process.argv)
+

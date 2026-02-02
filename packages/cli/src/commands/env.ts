@@ -18,7 +18,7 @@ export async function setupEnv(): Promise<void> {
   for (const pkg of PACKAGES_WITH_ENV) {
     const pkgPath = path.join(packagesDir, pkg)
     const examplePath = path.join(pkgPath, '.env.example')
-    const envPath = path.join(pkgPath, '.env')
+    const envPath = path.join(pkgPath, '.env.local')
 
     if (!fs.existsSync(pkgPath)) {
       console.log(chalk.yellow(`  ⚠ Package "${pkg}" not found, skipping.`))
@@ -31,13 +31,14 @@ export async function setupEnv(): Promise<void> {
     }
 
     if (fs.existsSync(envPath)) {
-      console.log(chalk.gray(`  ✓ .env already exists in "${pkg}", skipping.`))
+      console.log(chalk.gray(`  ✓ .env.local already exists in "${pkg}", skipping.`))
       continue
     }
 
     fs.copyFileSync(examplePath, envPath)
-    console.log(chalk.green(`  ✔ Created .env in "${pkg}" from .env.example`))
+    console.log(chalk.green(`  ✔ Created .env.local in "${pkg}" from .env.example`))
   }
 
   console.log(chalk.blue('\n✅ Environment setup complete!\n'))
 }
+

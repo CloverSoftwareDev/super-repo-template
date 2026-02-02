@@ -7,4 +7,5 @@
 /packages/website/node_modules
 /packages/api/public
 TODO.md
+/packages/*/.env.local
 

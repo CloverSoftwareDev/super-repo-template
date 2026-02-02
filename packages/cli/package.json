@@ -1,0 +1,24 @@
+{
+  "name": "@super-repo/cli",
+  "version": "0.0.1",
+  "private": true,
+  "bin": {
+    "super-cli": "./dist/index.js"
+  },
+  "scripts": {
+    "build": "tsc",
+    "start": "node dist/index.js",
+    "dev": "tsx watch src/index.ts"
+  },
+  "dependencies": {
+    "commander": "^11.1.0",
+    "chalk": "^5.3.0",
+    "inquirer": "^9.2.14"
+  },
+  "devDependencies": {
+    "@types/node": "^20.10.0",
+    "@types/inquirer": "^9.0.7",
+    "tsx": "^4.6.0",
+    "typescript": "^5.3.0"
+  }
+}

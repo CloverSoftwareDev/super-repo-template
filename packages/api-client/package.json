@@ -1,0 +1,23 @@
+{
+  "name": "@super-repo/api-client",
+  "version": "0.0.1",
+  "private": true,
+  "scripts": {
+    "generate": "kubb generate",
+    "build": "tsc"
+  },
+  "dependencies": {
+    "@tanstack/react-query": "^5.0.0",
+    "axios": "^1.6.0"
+  },
+  "devDependencies": {
+    "@kubb/cli": "^2.0.0",
+    "@kubb/core": "^2.0.0",
+    "@kubb/swagger": "^2.0.0",
+    "@kubb/swagger-ts": "^2.0.0",
+    "@kubb/swagger-tanstack-query": "^2.0.0",
+    "@kubb/swagger-faker": "^2.0.0",
+    "@faker-js/faker": "^8.3.0",
+    "typescript": "^5.3.0"
+  }
+}

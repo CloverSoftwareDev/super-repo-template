@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Super Repo - Scale Infinitely</title>
+    <link rel="stylesheet" href="styles/main.css">
+    <script src="https://unpkg.com/htmx.org@1.9.10"></script>
+</head>
+<body>
+
+    <!-- Header -->
+    <header class="nav-header">
+        <div class="layout-container" style="width: 100%; display: flex; justify-content: space-between; align-items: center;">
+            <a href="#" class="logo">
+                <div class="logo-icon"></div>
+                Super Repo
+            </a>
+            <nav class="nav-links">
+                <a href="#features">Features</a>
+                <a href="#ai">Intelligence</a>
+                <a href="#docs">Documentation</a>
+                <a href="https://github.com" target="_blank">GitHub</a>
+            </nav>
+        </div>
+    </header>
+
+    <main class="layout-container">
+        
+        <!-- Hero -->
+        <section class="hero-section">
+            <span class="hero-pill">v1.0.0 Release</span>
+            <h1 class="hero-title">
+                Build Faster.<br>Scale Infinitely.
+            </h1>
+            <p class="hero-subtitle">
+                The high-performance monorepo template for modern engineering teams.<br>
+                Integrated with next-gen AI navigation.
+            </p>
+            <div class="hero-buttons">
+                <a href="#docs" class="btn btn-primary">Start Building</a>
+                <a href="#ai" class="btn btn-secondary">Explore AI</a>
+            </div>
+        </section>
+
+        <!-- Features Grid -->
+        <section id="features" class="bento-grid">
+            <div class="bento-card wide">
+                <h3>Monorepo Architecture</h3>
+                <p>
+                    Engineered for scale. Separate packages for API (Fastify), Client (Expo), Web (Next.js), and CLI ensure distinct separation of concerns while sharing strict TypeScript types.
+                </p>
+                <div class="code-block" style="margin-top: 20px; border: none; background: rgba(0,0,0,0.3);">
+                    <span class="code-cmd">packages/</span><br>
+                    ├── api <span class="code-key">(fastify)</span><br>
+                    ├── client <span class="code-key">(expo)</span><br>
+                    └── web <span class="code-key">(next.js)</span>
+                </div>
+            </div>
+            <div class="bento-card">
+                <h3>Type Safety</h3>
+                <p>
+                    End-to-end type safety from your database to your UI. Shared interfaces prevent runtime errors and boost developer confidence.
+                </p>
+            </div>
+            <div class="bento-card">
+                <h3>Modern Stack</h3>
+                <p>
+                    Built on the bleeding edge: Next.js 15, React 19, TypeScript 5, and Biome.
+                </p>
+            </div>
+            <div class="bento-card wide">
+                <h3>Developer Experience</h3>
+                <p>
+                    Instant HMR, fast builds, and automated formatting. The CLI tool automates scaffolding, ensuring you focus on code, not config.
+                </p>
+            </div>
+        </section>
+
+        <!-- AI Schematic Section -->
+        <section id="ai" class="ai-section">
+            <span class="section-label">Intelligence Layer</span>
+            <h2 class="section-title">Context-Aware Engineering</h2>
+            
+            <div class="schematic-diagram">
+                <!-- Node 1 -->
+                <div class="schematic-node">
+                    <span class="node-icon">📦</span>
+                    <span class="node-label">Codebase</span>
+                    <span class="node-desc">Monorepo Source</span>
+                </div>
+
+                <!-- Connector -->
+                <div class="schematic-connector"></div>
+
+                <!-- Node 2 (Center) -->
+                <div class="schematic-node">
+                    <span class="node-icon">📄</span>
+                    <span class="node-label">GEMINI.md</span>
+                    <span class="node-desc">Context Bridge</span>
+                </div>
+
+                <!-- Connector -->
+                <div class="schematic-connector"></div>
+
+                <!-- Node 3 -->
+                <div class="schematic-node">
+                    <span class="node-icon">🤖</span>
+                    <span class="node-label">Antigravity</span>
+                    <span class="node-desc">Agentic AI</span>
+                </div>
+            </div>
+
+            <p class="hero-subtitle" style="max-width: 500px;">
+                Every package includes self-documenting context files, allowing AI agents to navigate and reason about your code with zero hallucinations.
+            </p>
+            
+            <a href="https://deepmind.google/technologies/gemini/" target="_blank" class="btn btn-secondary" style="display: inline-flex; margin-top: 24px;">
+                Learn about Gemini
+            </a>
+        </section>
+
+        <!-- Docs Section (Accordion) -->
+        <section id="docs" class="docs-section">
+            <span class="section-label" style="text-align: center;">Documentation</span>
+            <h2 class="section-title" style="text-align: center;">Get Started</h2>
+            
+            <div class="doc-wrapper">
+                <div class="accordion-group">
+                    
+                    <details class="accordion-item" open>
+                        <summary>Installation & Setup</summary>
+                        <div class="accordion-content">
+                            <p>Bootstrap your new project in seconds.</p>
+                            <div class="code-block">
+                                <span class="code-cmd">git</span> clone https://github.com/super-repo/template<br>
+                                <span class="code-cmd">npm</span> install
+                            </div>
+                        </div>
+                    </details>
+
+                    <details class="accordion-item">
+                        <summary>Development Workflow</summary>
+                        <div class="accordion-content">
+                            <p>Start the unified development server. This launches API, Web, and Website packages in parallel.</p>
+                            <div class="code-block">
+                                <span class="code-cmd">npm</span> run dev
+                            </div>
+                            <p style="margin-top: 16px;">Access points:</p>
+                            <ul>
+                                <li>Web: localhost:3001</li>
+                                <li>Docs: localhost:3000</li>
+                                <li>API: localhost:8080</li>
+                            </ul>
+                        </div>
+                    </details>
+
+                    <details class="accordion-item">
+                        <summary>Project Structure</summary>
+                        <div class="accordion-content">
+                            <p>The monorepo is organized into specialized workspaces:</p>
+                            <br>
+                            <strong>packages/api</strong>: Fastify backend with type-safe schemas.<br>
+                            <strong>packages/web</strong>: Next.js App Router application.<br>
+                            <strong>packages/client</strong>: Expo React Native application.<br>
+                            <strong>packages/cli</strong>: Custom scaffolding tools.
+                        </div>
+                    </details>
+
+                    <details class="accordion-item">
+                        <summary>AI Context Files</summary>
+                        <div class="accordion-content">
+                            <p>
+                                To enable AI collaboration, keep <code>GEMINI.md</code> files updated in each package root. 
+                                These files serve as the "long-term memory" for Antigravity agents.
+                            </p>
+                        </div>
+                    </details>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- Footer -->
+        <footer class="footer">
+            <p>Designed for the future of coding.</p>
+            <p style="opacity: 0.5; margin-top: 8px;">Powered by Google DeepMind</p>
+        </footer>
+
+    </main>
+
+</body>
+</html>

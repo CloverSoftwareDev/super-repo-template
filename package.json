@@ -1,0 +1,23 @@
+{
+  "name": "super-repo-template",
+  "version": "1.0.0",
+  "description": "Template of a ai monorepo in TS",
+  "workspaces": [
+    "packages/*"
+  ],
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "format": "npx @biomejs/biome format --write",
+    "lint": "npx @biomejs/biome lint --write",
+    "check": "npx @biomejs/biome check --write"
+  },
+  "keywords": [
+    "monorepo"
+  ],
+  "author": "CloverSoftwareDev",
+  "license": "MIT",
+  "devDependencies": {
+    "@biomejs/biome": "2.3.13"
+  }
+}
